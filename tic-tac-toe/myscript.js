@@ -17,7 +17,7 @@ table.addEventListener('click', function (e) {
     e.target.textContent = newSym;
 });
 
-const restartFunc = (e) => {
+const restartFunc = () => {
     game = Array.from({ length: 9 }, () => '');
     cells.forEach((td) => td.textContent = '');
 };
