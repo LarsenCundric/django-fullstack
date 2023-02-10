@@ -1,0 +1,32 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Level 2 Demo Users</title>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+</head>
+<body>
+    <h1>Django Level 2! USERS</h1>
+    <h2>Here are all the demo users:</h2>
+    <div class="'djangotwo">
+        {% if demo_users %}
+            <ol>
+                {% for user in demo_users %}
+                <li>
+                    User Info
+                    <ul>
+                        <li>{{ user.first_name }}</li>
+                        <li>{{ user.last_name }}</li>
+                        <li>{{ user.email }}</li>
+                    </ul>
+                </li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <p>NO DEMO USERS FOUND!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
