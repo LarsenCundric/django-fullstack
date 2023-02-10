@@ -1,4 +1,4 @@
-"""first_project URL Configuration
+"""basicforms URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,15 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from django.http import HttpResponse
-
-def index(request):
-    return HttpResponse('<em>INDEX</em>')
+from django.urls import path
+from basicapp import views
 
 urlpatterns = [
-    path('', index),
+    path("", views.index),
     path("admin/", admin.site.urls),
-    path('first_app/', include(('first_app.urls', 'first_app'), namespace='first_app')),
-    path('users/', include(('second_app_users.urls', 'users'), namespace='users')),
+    path("formpage/", views.form_name_view, name='form_name'),
 ]
