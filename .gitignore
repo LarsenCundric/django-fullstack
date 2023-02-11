@@ -2,7 +2,6 @@
 .vscode
 .DS_Store
 __pycache__
-settings.py
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
